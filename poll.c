@@ -6,8 +6,6 @@
 
 #define MAXNUM 100
 
-#define max(a,b) ( ((a)>(b)) ? (a):(b) )
-
 int main(void)
 {
         struct pollfd fds[2];
@@ -25,7 +23,7 @@ int main(void)
         fds[1].events=POLLIN;//
         while(1)
         {
-                retval=poll(fds,2,5000); //
+                retval=poll(fds,2,5000); //遍历监控fds中的文件描述
                 printf("retval = %d\n",retval);
                 if(retval<0)
                         printf("error\n");
