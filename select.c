@@ -23,7 +23,7 @@ int main(void)
                 tv.tv_sec=5;
                 tv.tv_usec=0;
 
-                retval=select(mfd+1,&rfds,NULL,NULL,&tv); //从0到mfd所有文件描述符进行监控（系统最大监控数FD_SETSIZE），
+                retval=select(mfd+1,&rfds,NULL,NULL,&tv); //遍历从0到mfd所有文件描述符进行监控（系统最大监控数FD_SETSIZE），
                 if(retval<0)
                         printf("error\n");
                 if(retval==0)
