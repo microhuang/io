@@ -15,7 +15,7 @@ int main(void)
                 exit(0); //结束父进程
         }
         //子进程
-        setsid(); //建立新回话期
+        setsid(); //建立新会话期
         chdir("/tmp"); //改变运行根目录
         umask(0); //设置屏蔽字
         openlog("daemon_example",LOG_CONS|LOG_PID,LOG_DAEMON);
