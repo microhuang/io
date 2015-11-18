@@ -7,7 +7,7 @@
 
 void sig_child(int signo)
 {
-        while(waitpid(-1,NULL,WNOHANG)>0) //任意子进程结束时返回
+        while(waitpid(-1,NULL,WNOHANG)>0) //waitpid的-1调用，对任意结束对子进程进行收尸，循环中直到所有已结束对子进程收尸完，WNOHANG表示如果没有已结束子进程立即返回，不用阻塞
         {
                 
                 ;
