@@ -5,6 +5,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+//waitpid、wait两个作业：1、等子进程先运行；2、替子进程收尸。
+
 void sig_child(int signo)
 {
         while(waitpid(-1,NULL,WNOHANG)>0) //waitpid的-1调用，对任意结束对子进程进行收尸，循环中直到所有已结束对子进程收尸完，WNOHANG表示如果没有已结束子进程立即返回，不用阻塞
