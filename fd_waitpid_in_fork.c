@@ -5,8 +5,19 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+void sig_child(int signo)
+{
+        while(waitpid(-1,NULL,WNOHANG)>0)
+        {
+                
+                ;
+        }
+        return;
+}
+
 int main(void)
 {
+        signal(SIGCHLD,sig_child);//注册子进程退出信号处理程序，用于替子进程收尸
         int fd,pid,status;
         char buf[10];
         if((fd=open("/tmp/c/fork.l",O_RDONLY))<0)
