@@ -7,7 +7,7 @@
 
 void sig_child(int signo)
 {
-        while(waitpid(-1,NULL,WNOHANG)>0)
+        while(waitpid(-1,NULL,WNOHANG)>0) //任意子进程结束时返回
         {
                 
                 ;
