@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 
 //waitpid、wait两个作业：1、等子进程先运行；2、替子进程收尸。
+//避免僵尸进程等另一技巧：fork两次，孙进程干活、子进程直接退出、父进程只需wait子进程，孙进程成为孤儿进程被init接收。
 
 void sig_child(int signo)
 {
